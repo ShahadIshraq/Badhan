@@ -12,8 +12,8 @@
 				{{csrf_field()}}
 
 				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" name="email" required>
+					<label for="id">Student ID</label>
+					<input type="number" class="form-control" id="id" name="id" required>
 				</div>
 
 				<div class="form-group">

@@ -1,9 +1,36 @@
-<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="border-left:1px solid #EEE;height:500px" align="center">
 <div class="sidebar-module sidebar-module-inset">
-  <h4>About</h4>
-  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+  <h4>Search for donor</h4>
+  <form method="post" action="/result">
+        {{csrf_field()}}
+        <div class="form-group">
+          <label for="bloodGroup" >Blood Group</label>
+          <select name="bloodGroup" class="form-control" id="bloodGroup" name="bloodGroup" required >
+            <option disabled selected value style="display:none"> -- select an option -- </option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="area" >Area <br><small>Optional</small></label>
+            <input type="text" class="form-control" id="area" name="area">
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+
+    </form>
 </div>
-<div class="sidebar-module">
+{{-- <div class="sidebar-module">
   <h4>Archives</h4>
   <ol class="list-unstyled">
     <li><a href="#">March 2014</a></li>
@@ -20,7 +47,10 @@
     <li><a href="#">April 2013</a></li>
   </ol>
 </div>
-<div class="sidebar-module">
+<div class="sidebar-module"> --}}
+  <br>
+  <hr>
+  <br>
   <h4>Elsewhere</h4>
   <ol class="list-unstyled">
     <li><a href="#">GitHub</a></li>

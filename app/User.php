@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -24,6 +25,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'confirmed',
     ];
+
+    public function contacts()
+    {
+        return $this->hasMany(Contacts::class);
+    }
+
+    public function donations()
+    {
+        return $this->hasMany(Donation::class);
+    }
 }

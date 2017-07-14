@@ -1,24 +1,5 @@
 @extends('layouts.master')
 
-{{-- @section('head')
-	<script type="text/javascript">
-	    var datefield=document.createElement("input")
-	    datefield.setAttribute("type", "date")
-	    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-	        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
-	        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-	        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n') 
-	    }
-	</script>
- 
-	<script>
-		if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-	    	jQuery(function($){ //on document.ready
-	        	$('#birthday').datepicker();
-	    	})
-		}
-	</script>
-@endsection --}}
 
 @section('content')
 	
@@ -31,7 +12,7 @@
 			<h1>Sign Up</h1>
 			<form method="post" action="/register">
 				{{csrf_field()}}
-				
+				 
 				<div class="form-group">
 					<label for="name" >Name</label>
 					<input type="text" class="form-control" id="name" name="name" required>
@@ -43,24 +24,24 @@
 
 
 				<div class="form-group">
-					<label for="blood_group" >Blood Group</label>
-					<select name="blood_group" class="form-control" id="blood_group" name="blood_group" required >
+					<label for="bloodGroup" >Blood Group</label>
+					<select name="bloodGroup" class="form-control" id="bloodGroup" name="bloodGroup" required >
 						<option disabled selected value style="display:none"> -- select an option -- </option>
 	    				<option value="A+">A+</option>
 	    				<option value="A-">A-</option>
 	    				<option value="B+">B+</option>
 	    				<option value="B-">B-</option>
-	    				<option value="AB+">A+</option>
-	    				<option value="AB-">A-</option>
-	    				<option value="O+">B+</option>
-	    				<option value="O-">B-</option>
+	    				<option value="AB+">AB+</option>
+	    				<option value="AB-">AB-</option>
+	    				<option value="O+">O+</option>
+	    				<option value="O-">O-</option>
 	  				</select>
   				</div>
 
 				<div class="form-group">
-					<label for="dateOfBirth" >Date of birth</label>
+					<label for="dateOfBirth" >Date of birth <br><small>Example : 06-01-2017 (The leading zeros are needed.)</small></label>
 					{{-- <input type="date" class="form-control" id="birthday" name="birthday" size="20" />--}}
-					<input type="text" class="form-control" name="dateFrom" value="<?php echo date('d-m-Y'); ?>" />
+					<input type="text" class="form-control" name="dateOfBirth" placeholder="<?php echo date('d-m-Y'); ?>" />
 					
 					{{-- Keeping the php part for using later --}}
 					
@@ -70,8 +51,43 @@
 				</div>
 
 				<div class="form-group">
+					<label for="hall" >Redidential hall</label>
+					<select name="hall" class="form-control" id="hall" name="hall" required >
+
+						<option disabled selected value style="display:none"> -- select an option -- </option>
+	    				<option value="ch">Chhatri Hall</option>
+	    				<option value="aula">Ahsan Ullah Hall</option>
+	    				<option value="nih">Kazi Nazrul Islam Hall</option>
+	    				<option value="th">Titumir Hall</option>
+	    				<option value="swh">Suhrawardi Hall</option>
+	    				<option value="sh">Sher-e-Bangla Hall</option>
+	    				<option value="ssh">Shahid Smriti Hall</option>
+	  				</select>
+  				</div>
+
+  				<div class="form-group">
+					<label for="room">Room number <br><small>If resident</small></label>
+					<input type="number" class="form-control" id="room" name="room">
+				</div>
+
+				<div class="form-group">
+					<label for="area">Area <br><small>Address in Dhaka. Example : Dhanmondi</ADDRESS></small></label>
+					<input type="text" class="form-control" id="area" name="area">
+				</div>
+
+				<div class="form-group">
+					<label for="lastDonation" >Date of last donation <br><small>Example : 06-01-2017 (The leading zeros are needed.)</small></label>
+					<input type="text" class="form-control" name="lastDonation"  placeholder="<?php echo date('d-m-Y'); ?>"/>
+				</div>
+
+				<div class="form-group">
 					<label for="email">Email</label>
 					<input type="email" class="form-control" id="email" name="email" required>
+				</div>
+
+				<div class="form-group">
+					<label for="number">Contact number</label>
+					<input type="text" class="form-control" id="number" name="number" required>
 				</div>
 
 				<div class="form-group">

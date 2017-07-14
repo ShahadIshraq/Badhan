@@ -6,17 +6,27 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">{{-- "nav-item active" --}}
-        <a class="nav-link" href="/">Home{{--  <span class="sr-only">(current)</span> --}}</a>
+        <a class="nav-link" href="/events">Events</a>
       </li>
+            
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
+        <a class="nav-link" href="/contact">Contact Us</a>
       </li>
-      {{-- <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> --}}
-    </ul>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/search">Search donor</a>
+      </li>
+      
+      </ul>
     @if (auth()->check())
-      <a class="nav-link ml-auto" href="#" >{{auth()->user()->name}}</a>
+      <form class="form-inline mt-2 mt-md-0">
+        <a class="nav-link mr-sm-2" href="/{{auth()->user()->id}}" >{{auth()->user()->name}}</a>
+        @if(App\Admin::where('user_id', '=', auth()->user()->id)->exists())
+          <a class="nav-link mr-sm-2" href="/approvals">Approvals</a>
+        @endif
+        <a class="nav-link mr-sm-2" href="/logout" ><small>Log out</small></a>
+      </form>
+      
     @else
       <a class="btn btn-outline-success my-2 my-sm-0" role="button" href="/login">Sign in/Sign up</a>
     @endif
