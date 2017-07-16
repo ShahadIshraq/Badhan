@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Donation;
 use App\User;
+use App\Contact;
 
 class ProfileController extends Controller
 {
@@ -18,8 +19,9 @@ class ProfileController extends Controller
     {
     	$donations = Donation::where('user_id', '=', $user)->get();
     	$userInformation = User::where('id' , '=' , $user)->get();
+        $contacts = Contact::where('user_id', '=', $user)->get();
 
-    	return view('profile.dashboard',compact('donations','userInformation'));
+    	return view('profile.dashboard',compact('donations','userInformation','contacts'));
     }
 
 

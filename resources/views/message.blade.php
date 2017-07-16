@@ -11,8 +11,7 @@
 	      			<li>{{$message}}</li>
 	      		@endforeach
 	      	</ul>
-	      </div><!-- /.row -->
-      </div>
+	      </div>
       
       <div class="row">
         <div class="col-sm-8" >

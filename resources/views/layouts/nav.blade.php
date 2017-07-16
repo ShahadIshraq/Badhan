@@ -5,19 +5,23 @@
   <a class="navbar-brand" href="/">Badhan</a>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">{{-- "nav-item active" --}}
+      <li class="{{ Request::path()=='events' ? 'nav-item active' : 'nav-item' }}">
         <a class="nav-link" href="/events">Events</a>
       </li>
             
-      <li class="nav-item">
+      <li class="{{ Request::path()=='contact' ? 'nav-item active' : 'nav-item' }}">
         <a class="nav-link" href="/contact">Contact Us</a>
       </li>
 
-      <li class="nav-item">
+      <li class="{{ Request::path()=='search' ? 'nav-item active' : 'nav-item' }}">
         <a class="nav-link" href="/search">Search donor</a>
       </li>
-      
-      </ul>
+
+{{--       <li class="nav-item disable">
+        <a class="nav-link" href="#">{{Request::path()}}</a>
+      </li>
+ --}}      
+    </ul>
     @if (auth()->check())
       <form class="form-inline mt-2 mt-md-0">
         <a class="nav-link mr-sm-2" href="/{{auth()->user()->id}}" >{{auth()->user()->name}}</a>

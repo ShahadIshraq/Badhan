@@ -7,87 +7,88 @@
       <div class="row">
 
         <div class="col-sm-8">
+
 			<hr>
-			<h1>Donations till date : {{count($donations)}}</h1>
+			<h1>Donations till date : <font color="green"> <strong>{{count($donations)}}</strong></font></h1>
 			<hr>
 			<br>
-			<div class="dates">
+			
+
+        	<ul class="list-group">
 				@if(count($donations) > 0)
-					<ol class="list-group">
-						@foreach($donations as $donation)
+					<div class="comments">
+						@foreach ($donations as $donation)
 							<?
 								$date = \DateTime::createFromFormat('Y-m-d', $donation->date);
 							?>
-							<h3><li>{{ $donation->date }}</li></h3>
+							<li class="list-group-item"><h3>
+								<font  color="LightSeaGreen">{{ $date->format('d-m-Y') }}</font>
+							</h3></li>
 						@endforeach
-					</ol>
+					</div>
 				@endif
-			</div>
+			</ul>
+
+
+
+
 			<br>
 			<hr>
 			<h1>Account information</h1>
 			<hr>
 			<br>
-			<div class="form-group">
-				<h4>Name : <u color="grey"><strong>{{$userInformation[0]->name}}</strong></u></h4> 
-			</div>
-			<?
-				switch ($userInformation[0]->hall) {
-					case 'aula':
-						$hall = "Ahsan Ullah Hall";
-						break;
+
+			<ul class="list-group">
+				<div class="comments">
+
+					<li class="list-group-item">
+						<h4>Name : <font  color="LightSeaGreen">{{$userInformation[0]->name}}</font></h4> 
+					</li>
+					@include('functions.hall')
+					<?
+						$hall = hallName($userInformation[0]->hall);
+					?>
+					<li class="list-group-item">
+						<h4>Student ID : <font  color="LightSeaGreen">{{sprintf('%07d', $userInformation[0]->id)}}</font></h4> 
+					</li>
+
+					<li class="list-group-item">
+						<h4>Blood group : <font  color="LightSeaGreen">{{$userInformation[0]->bloodGroup}}</font></h4> 
+					</li>
+
+					<li class="list-group-item">
+						<h4>Hall : <font  color="LightSeaGreen">{{$hall}}</font></h4> 
+					</li>
+
+					<li class="list-group-item">
+						<h4>Room number : <font  color="LightSeaGreen">{{$userInformation[0]->room}}</font></h4> 
+					</li>
+
+					<li class="list-group-item">
+						<h4>Area : <font  color="LightSeaGreen">{{$userInformation[0]->area}}</font></h4> 
+					</li>
 					
-					case 'nih':
-						$hall = "Kazi Nazrul Islam Hall";
-						break;
+					<li class="list-group-item">
+						<h4>Contact numbers : 
+								@foreach($contacts as $contact)	
+									 
+										<font  color="LightSeaGreen">{{$contact->number}} &nbsp; &nbsp;</font>
+									
+								@endforeach
+							
+						</h4> 
+					</li>
 
-					case 'ch':
-						$hall = "Chhatri Hall";
-						break;
+					<li class="list-group-item">
+						<h4>Email : <font  color="LightSeaGreen">{{$userInformation[0]->email}}</font></h4> 
+					</li>
 
-					case 'th':
-						$hall = "Titumir Hall";
-						break;
-
-					case 'swh':
-						$hall = "Suhrawardi Hall";
-						break;
-					case 'sh':
-						$hall = "Sher-E-Bangla Hall";
-						break;
-
-					default:
-						$hall = "Shahid Smriti Hall";
-						break;
-				}
-			?>
+				</div>
+			</ul>	
+			<br>
 			<div class="form-group">
-				<h4>Student ID : <u color="grey"><strong>{{sprintf('%07d', $userInformation[0]->id)}}</strong></u></h4> 
-			</div>
-
-			<div class="form-group">
-				<h4>Blood group : <u color="grey"><strong>{{$userInformation[0]->bloodGroup}}</strong></u></h4> 
-			</div>
-
-			<div class="form-group">
-				<h4>Hall : <u color="grey"><strong>{{$hall}}</strong></u></h4> 
-			</div>
-
-			<div class="form-group">
-				<h4>Room number : <u color="grey"><strong>{{$userInformation[0]->room}}</strong></u></h4> 
-			</div>
-
-			<div class="form-group">
-				<h4>Area : <u color="grey"><strong>{{$userInformation[0]->area}}</strong></u></h4> 
-			</div>
-
-			<div class="form-group">
-				<h4>Email : <u color="grey"><strong>{{$userInformation[0]->email}}</strong></u></h4> 
-			</div>		
-
-			<div class="form-group">
-					<a class="btn btn-secondary" href="/{{ auth()->user()->id }}/edit">Edit</a>
-				</div>	
+				<a class="btn btn-primary" href="/{{ auth()->user()->id }}/edit"><h2>Edit</h2></a>
+			</div>	
 
 
 

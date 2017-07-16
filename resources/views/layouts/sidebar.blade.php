@@ -1,5 +1,6 @@
 
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar" style="border-left:1px solid #EEE;height:500px" align="center">
+@if(\Auth::check())
 <div class="sidebar-module sidebar-module-inset">
   <h4>Search for donor</h4>
   <form method="post" action="/result">
@@ -30,6 +31,12 @@
 
     </form>
 </div>
+@else
+  <h4>You are not logged in!</h4>
+  You need to be logged in to search for donor. <br>
+  If you have an account then please <a href="login">log in</a>.<br>
+  Otherwise, please <a href="/contact">contact us</a> to place a request.  
+@endif
 {{-- <div class="sidebar-module">
   <h4>Archives</h4>
   <ol class="list-unstyled">
