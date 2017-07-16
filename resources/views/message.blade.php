@@ -12,7 +12,7 @@
 	      		@endforeach
 	      	</ul>
 	      </div>
-      
+      </div>
       <div class="row">
         <div class="col-sm-8" >
         	<a class="btn btn-secondary" href="{{ url()->previous() }}">Go back</a> &nbsp;
