@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Admin;
 use App\User;
+use App\Contact;
 
 class AdminController extends Controller
 {
@@ -22,8 +23,10 @@ class AdminController extends Controller
     		return view('message',compact('title','messages'));
     	}
     	// $hall = User::select('hall')->where('confirmed', '=', '0')->get();
+        $userInf = User::where('id', '=', auth()->user()->id)->get();
 
-    	$requests = User::where('confirmed', '=', '0')->get();
+    	$requests = User::where('confirmed', '=', '0')
+        ->where('hall' , '=' , $userInf[0]->hall)->get();
     	return view('profile.approvals',compact('requests'));
     }
 
@@ -56,6 +59,7 @@ class AdminController extends Controller
         // $hall = User::select('hall')->where('confirmed', '=', '0')->get();
 
         User::where('id', '=', $user )->delete();
+        Contact::where('user_id' , '=' , $user)->delete();
         $requests = User::where('confirmed', '=', '0')->get();
         return view('profile.approvals',compact('requests'));   
     }

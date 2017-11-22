@@ -28,7 +28,7 @@
         @if(App\Admin::where('user_id', '=', auth()->user()->id)->exists())
           <a class="nav-link mr-sm-2" href="/approvals">Approvals</a>
         @endif
-        <a class="nav-link mr-sm-2" href="/logout" ><small>Log out</small></a>
+        <a class="nav-link mr-sm-2" href="/logout" >Log out</a>
       </form>
       
     @else

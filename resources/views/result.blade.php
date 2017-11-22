@@ -8,7 +8,16 @@
 	      <div class="col-sm-8" >
 	      	<ul>
 	      		@foreach($donors as $donor)
-	      			<li>ID : <strong>{{$donor->id}}</strong> ,  Name : <strong>{{$donor->name}}</strong> , Area : <strong>{{$donor->area}}</strong> </li>
+	      			<?
+	      				$contacts = App\Contact::where('user_id', '=', $donor->id)->get();
+	      			?>
+	      			<li>ID : <strong>{{$donor->id}}</strong> ,  Name : <strong>{{$donor->name}}</strong> , Area : <strong>{{$donor->area}}</strong> , Contact Numbers :
+	      			@foreach($contacts as $contact)	
+									 
+						<strong>{{$contact->number}}</strong> &nbsp; &nbsp;
+									
+					@endforeach 
+	      			</li>
 	      		@endforeach
 	      	</ul>
 	      </div><!-- /.row -->
