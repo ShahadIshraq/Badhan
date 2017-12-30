@@ -9,14 +9,14 @@
 
         <div class="col-sm-9">
 			<h1>Edit information</h1>
-			<form method="post" action="/profile/edit">
+			<form method="post" action="/{{$userInformation[0]->id}}/save">
 				{{csrf_field()}}
 				 
 				<div class="form-group">
 					<label for="name" >Name</label>
 					<input type="text" class="form-control" id="name" name="name" value="{{$userInformation[0]->name}}" required>
 				</div>
-				<div class="form-group">
+			<!--	<div class="form-group">
 					<label for="id" >Student ID <small>Example : 1305022</small></label>
 					<input type="number" class="form-control" id="id" name="id" value="{{$userInformation[0]->name}}" required>
 				</div>
@@ -30,10 +30,10 @@
 				<div class="form-group">
 					<label for="dateOfBirth" >Date of birth <br><small>Example : 06-01-2017 (The leading zeros are needed.)</small></label>
 
-					<input type="text" class="form-control" name="dateOfBirth" <input type="number" class="form-control" id="id" name="id" value="{{$userInformation[0]->dateOfBirth}}" required >
+					<input type="text" class="form-control" name="dateOfBirth"value="{{$userInformation[0]->dateOfBirth}}" required >
 
 				</div>
-
+-->
 				<?
 					switch ($userInformation[0]->hall) {
 					case 'aula':
@@ -68,14 +68,14 @@
 				<div class="form-group">
 					<label for="hall" >Residential hall</label>
 					
-					<input type="text" class="form-control" name="dateOfBirth" <input type="number" class="form-control" id="id" name="id" value="{{$hall}}" required>
+					<input type="text" class="form-control" name="hall" value="{{$hall}}" required>
 
   				</div>
 
 				<div class="form-group">
 					<label for="room" >Room No.</label>
 
-					<input type="text" class="form-control" name="room" <input type="number" class="form-control" id="room" name="room" value="{{$userInformation[0]->room}}" required>
+					<input type="number" class="form-control" id="room" name="room" value="{{$userInformation[0]->room}}" required>
 
 				</div>
 
@@ -84,25 +84,21 @@
 					<input type="text" class="form-control" id="area" name="area" value="{{$userInformation[0]->area}}">
 				</div>
 
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" name="email"  value="{{$userInformation[0]->email}}" required>
-				</div>
-
-	{{-- 	<div class="form-group">
+	 			<div class="form-group">
 					<label for="number">Contact number</label>
-					<input type="text" class="form-control" id="number" name="number"
-					value="{{App\Contact::where('user_id','=',$userInformation[0]->id}}" required>
-				</div> 		 --}}
+					@foreach($contacts as $contact)	
+						<input type="text" class="form-control" id="number" name="{{$contact->number}}" value="{{$contact->number}}">
+					@endforeach
+				</div> 
 
 				<div class="form-group">
 					<label for="password">Password</label>
-					<input type="password" class="form-control" id="password" name="password" required>
+					<input type="password" class="form-control" id="password" name="password" >
 				</div>
 
 				<div class="form-group">
 					<label for="password">Confirm Password</label>
-					<input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+					<input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
 				</div>
 
 				<div class="form-group">

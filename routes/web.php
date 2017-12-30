@@ -184,4 +184,15 @@ Route::get('/{user}', 'ProfileController@dashboard');
 */
 Route::get('/{user}/edit', 'ProfileController@edit');
 
+/*
+|-------------------------------------------------------------------------- 
+| User profile edited data saving request
+|--------------------------------------------------------------------------
+|
+| Directs to the save function of the ProfileController , where ,after
+| authentication, the edits are saved.
+|
+*/
+Route::post('/{user_id}/save', 'ProfileController@save');
+
 
