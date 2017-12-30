@@ -8,9 +8,9 @@
     <div class="carousel-item active">
       <img class="first-slide" src="/img/11026089_773803806039942_9212595406007974714_n.jpg" alt="First slide">
       <div class="container">
-        <div class="carousel-caption d-none d-md-block text-left">
-          <h1>Example headline.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Welcome</h1>
+          <p>Badhan BUET Zone.</p>
         </div>
       </div>
     </div>
@@ -18,17 +18,17 @@
       <img class="second-slide" src="/img/10360447_1042941362386679_986705264448553287_n.jpg" alt="Second slide">
       <div class="container">
         <div class="carousel-caption d-none d-md-block">
-          <h1>Another example headline.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <h1>Welcome</h1>
+          <p>Badhan BUET Zone</p>
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <img class="third-slide" src="/img/10342469_953418631414598_7995689322811172309_n.jpg" alt="Third slide">
       <div class="container">
-        <div class="carousel-caption d-none d-md-block text-right">
-          <h1>One more for good measure.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Welcome</h1>
+          <p>Badhan BUET Zone</p>
         </div>
       </div>
     </div>

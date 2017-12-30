@@ -34,6 +34,10 @@
 
 				</div>
 -->
+				<div class="form-group">
+					<label for="email" >Email</label>
+					<input type="email" class="form-control" id="email" name="email" value="{{$userInformation[0]->email}}" required>
+  				</div>
 				<?
 					switch ($userInformation[0]->hall) {
 					case 'aula':

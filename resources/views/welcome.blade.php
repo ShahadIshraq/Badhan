@@ -10,8 +10,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading"> <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading"> <span class="text-muted">Welcome to Badhan BUET Zone</span></h2>
+          <p class="lead">The page is still under construction. So there might be some bugs. Feel free to report problems to the  developer at shahad.nowhere@gmail.com</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-fluid mx-auto" src="/img/15095667_1206214669473326_7560856259169416316_n.jpg" alt="Generic placeholder image">
@@ -22,8 +22,8 @@
 
       <div class="row featurette">
         <div class="col-md-7 push-md-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Search for doners<span class="text-muted"><a href="/search"> here.</a></span></h2>
+          <p class="lead">Use blood group to find donors. But you have to be logged in to do so.</p>
         </div>
         <div class="col-md-5 pull-md-7">
           <img class="featurette-image img-fluid mx-auto" src="/img/12794361_1219602281403204_317258922881204277_n.jpg"  alt="Generic placeholder image">
@@ -34,8 +34,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">More options are coming<span class="text-muted"></span></h2>
+          <p class="lead">The hard part is over, The updates will now be coming regularly.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-fluid mx-auto" src="/img/18320693_1345102668909740_4460021826967401935_o.jpg">

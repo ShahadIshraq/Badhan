@@ -40,6 +40,7 @@ class ProfileController extends Controller
                 'area' => 'nullable',                
                 'room' => 'numeric|min:100|nullable',
                 'password' => 'confirmed' ,
+                'email' => 'required' ,
 
             ]);
 
@@ -57,6 +58,7 @@ class ProfileController extends Controller
         //return view("test");
         $user = User::find($user_id);
         $user->name = request('name');
+        $user->email = request('email');
         if (!(empty(request('password')))){
             $user->password = bcrypt(request('password'));
         }
