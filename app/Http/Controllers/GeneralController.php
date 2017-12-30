@@ -16,12 +16,9 @@ class GeneralController extends Controller
             ]);
     	$userInf = User::where('id', '=', auth()->user()->id)->get();
 
-    	if(request('area') == '') $donors = User::where('bloodGroup', '=', request('bloodGroup'))
-    		->where('hall' , '=' , $userInf[0]->hall )->get();
-    	else $donors = User::where('bloodGroup', '=', request('bloodGroup'))
-    		->where('area', '=', request('area'))
-    	->where('hall' , '=' , $userInf[0]->hall )->get();
-
+    	if(request('area') == '')  $conditions = ['bloodGroup' => request('bloodGroup') , 'hall' => $userInf[0]->hall ];
+    	else $conditions = ['bloodGroup' => request('bloodGroup') , 'hall' => $userInf[0]->hall , 'area' => request('area') ];
+        $donors = User::where($conditions)->get();
     	return view('result',compact('donors'));
     }
 }
