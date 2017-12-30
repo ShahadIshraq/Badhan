@@ -58,7 +58,9 @@
 					case 'sh':
 						$hall = "Sher-E-Bangla Hall";
 						break;
-
+					case 'rh':
+						$hall = "Dr. M.A. Rashid Hall";
+						break;
 					default:
 						$hall = "Shahid Smriti Hall";
 						break;
@@ -67,8 +69,18 @@
 
 				<div class="form-group">
 					<label for="hall" >Residential hall</label>
-					
-					<input type="text" class="form-control" name="hall" value="{{$hall}}" required>
+					<select name="hall" class="form-control" id="hall" name="hall" >
+
+						<option disabled selected value style="display:none">{{ $hall }}</option>
+	    				<option value="ch">Chhatri Hall</option>
+	    				<option value="aula">Ahsan Ullah Hall</option>
+	    				<option value="nih">Kazi Nazrul Islam Hall</option>
+	    				<option value="th">Titumir Hall</option>
+	    				<option value="swh">Suhrawardi Hall</option>
+	    				<option value="sh">Sher-e-Bangla Hall</option>
+	    				<option value="rh">Dr. M.A. Rashid Hall</option>
+	    				<option value="ssh">Shahid Smriti Hall</option>
+	  				</select>
 
   				</div>
 

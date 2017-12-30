@@ -37,7 +37,6 @@ class ProfileController extends Controller
     {
         $this->validate(request(), [
                 'name' => 'required',
-                'hall' => 'required',
                 'area' => 'nullable',                
                 'room' => 'numeric|min:100|nullable',
                 'password' => 'confirmed' ,
@@ -61,8 +60,9 @@ class ProfileController extends Controller
         if (!(empty(request('password')))){
             $user->password = bcrypt(request('password'));
         }
-         
-        $user->hall = request('hall');
+        if(!(empty(request('hall')))) { 
+            $user->hall = request('hall');
+        }   
         $user->room = request('room');
         $user->area = request('area');
 

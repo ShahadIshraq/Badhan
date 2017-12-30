@@ -24,7 +24,9 @@
 		case 'sh':
 			$hall = "Sher-E-Bangla Hall";
 			break;
-
+		case 'rh':
+			$hall = "Dr. M.A. Rashid Hall";
+			break;
 		default:
 			$hall = "Shahid Smriti Hall";
 			break;

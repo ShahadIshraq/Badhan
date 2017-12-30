@@ -61,6 +61,7 @@
 	    				<option value="th">Titumir Hall</option>
 	    				<option value="swh">Suhrawardi Hall</option>
 	    				<option value="sh">Sher-e-Bangla Hall</option>
+	    				<option value="rh">Dr. M.A. Rashid Hall</option>
 	    				<option value="ssh">Shahid Smriti Hall</option>
 	  				</select>
   				</div>
